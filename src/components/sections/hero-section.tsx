@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-accent/20 dark:from-primary dark:via-primary/95 dark:to-accent/20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-accent/20 dark:from-primary dark:via-primary/95 dark:to-accent/20 pt-20 md:pt-0">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10 dark:opacity-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-xl"></div>

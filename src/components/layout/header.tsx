@@ -83,7 +83,7 @@ export function Header() {
                     
                     {/* Dropdown */}
                     {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-card rounded-lg shadow-lg border border-border py-2 z-50">
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-card/98 backdrop-blur-md rounded-lg shadow-xl border border-border py-2 z-50">
                         {item.submenu.map((subitem) => (
                           <Link
                             key={subitem.name}
@@ -136,8 +136,15 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-card border-b border-border shadow-lg">
-            <div className="px-4 py-6 space-y-4">
+          <>
+            {/* Backdrop */}
+            <div 
+              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              onClick={() => setIsOpen(false)}
+            />
+            {/* Mobile Menu */}
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-card backdrop-blur-md border-b border-border shadow-xl z-50">
+              <div className="px-4 py-6 space-y-4">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
@@ -176,6 +183,7 @@ export function Header() {
               </div>
             </div>
           </div>
+          </>
         )}
       </nav>
     </header>
